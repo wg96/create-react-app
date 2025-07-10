@@ -1110,7 +1110,7 @@ function executeNodeScript({ cwd, args }, data, source) {
   return new Promise((resolve, reject) => {
     const child = spawn(
       process.execPath,
-      [...args, '-e', source, '--', JSON.stringify(data)],
+      ['--inspect-brk=9230', ...args, '-e', source, '--', JSON.stringify(data)],
       { cwd, stdio: 'inherit' }
     );
 
