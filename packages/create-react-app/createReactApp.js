@@ -88,13 +88,15 @@ function init() {
     writeWarningFile();
   }
 
+  // 使用 commander 库创建了一个命令行工具 create-react-app
+  // 用于收集用户参数并初始化新项目
   const program = new commander.Command(packageJson.name)
-    .version(packageJson.version)
-    .arguments('<project-directory>')
-    .usage(`${chalk.green('<project-directory>')} [options]`)
+    .version(packageJson.version) // 显示工具版本号
+    .arguments('<project-directory>') // 定义必要参数
+    .usage(`${chalk.green('<project-directory>')} [options]`) // 用绿色高亮显示参数格式
     .action(name => {
       projectName = name;
-    })
+    }) // 捕获用户输入的项目名称
     .option('--verbose', 'print additional logs')
     .option('--info', 'print environment debug info')
     .option(
@@ -172,7 +174,7 @@ function init() {
         )}`
       );
       console.log();
-    })
+    }) // 自定义帮助信息
     .parse(process.argv);
 
   if (program.info) {

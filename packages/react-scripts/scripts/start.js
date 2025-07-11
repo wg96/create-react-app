@@ -37,7 +37,7 @@ const {
 const openBrowser = require('react-dev-utils/openBrowser');
 const semver = require('semver');
 const paths = require('../config/paths');
-const configFactory = require('../config/webpack.config');
+const configFactory = require('../config/webpack.config'); // webpack 编译器配置，重要
 const createDevServerConfig = require('../config/webpackDevServer.config');
 const getClientEnvironment = require('../config/env');
 const react = require(require.resolve('react', { paths: [paths.appPath] }));
